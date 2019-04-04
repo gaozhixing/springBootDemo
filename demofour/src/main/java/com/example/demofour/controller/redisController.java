@@ -75,6 +75,13 @@ public class redisController {
         pageBooks.setResultCode("0000");
         pageBooks.setResultMsg("success");
         return pageBooks;
+    }
 
+    @RequestMapping("/exceptionTest")
+    public BaseResult<String> exception(){
+        //int a = 1/0;
+        String a= null;
+        a.equals("b");
+        return ResultUtil.success();
     }
 }
