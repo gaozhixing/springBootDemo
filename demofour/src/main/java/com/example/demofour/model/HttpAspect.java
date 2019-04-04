@@ -34,16 +34,10 @@ public class HttpAspect {
     @Autowired
     private ExceptionHandle handle;
     
-//    @Pointcut("execution(public * com.example.demo1.controller.*.*(..))")
-//    public void logDemo1() {    	
-//    }
     @Pointcut("execution(public * com.example.demofour.iService.*.*(..))")
     public void logDemo2() {    	
     }
-//    @Pointcut("logDemo1() || logDemo2()")
-//    public void logDemo() {    	
-//    }
-    
+
     @Before("logDemo2()")
     public void doBefore(JoinPoint joinPoint) {
     	ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
