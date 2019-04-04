@@ -64,7 +64,7 @@ public class redisController {
 
     }*/
     @RequestMapping("/findByTitle")
-    public BaseResult<PageResult<Book>> getByTitle(String title){
+    public PageResult<Book> getByTitle(String title){
         Page<Book> books = bookService.findByTitleAll(title);
         PageResult<Book> pageBooks= new PageResult<>();
         pageBooks.setCount(books.getTotalElements());
@@ -72,7 +72,9 @@ public class redisController {
         pageBooks.setPageSize(books.getSize());
         pageBooks.setResult(books.getContent());
         pageBooks.setPageCount(books.getTotalPages());
-        return new BaseResult("000","success",pageBooks);
+        pageBooks.setResultCode("0000");
+        pageBooks.setResultMsg("success");
+        return pageBooks;
 
     }
 }
