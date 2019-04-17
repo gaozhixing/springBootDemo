@@ -1,17 +1,16 @@
 package com.example.demofour.controller;
 
 
-import com.example.demofour.entity.BaseResult;
-import com.example.demofour.entity.Book;
-import com.example.demofour.entity.PageResult;
-import com.example.demofour.entity.TUser;
+import com.example.demofour.entity.*;
 import com.example.demofour.iService.BookService;
 import com.example.demofour.iService.UserService;
 import com.example.demofour.util.RedisUtil;
 import com.example.demofour.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
@@ -84,4 +83,9 @@ public class redisController {
         a.equals("b");
         return ResultUtil.success();
     }
+    @RequestMapping("/testList")
+    public BaseResult<demoVo> testList(@RequestBody  demoVo vo){
+        return ResultUtil.success(vo);
+    }
+
 }
