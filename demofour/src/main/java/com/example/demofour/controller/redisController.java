@@ -73,6 +73,8 @@ public class redisController {
         pageBooks.setPageCount(books.getTotalPages());
         pageBooks.setResultCode("0000");
         pageBooks.setResultMsg("success");
+
+
         
         return pageBooks;
     }
