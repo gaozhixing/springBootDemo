@@ -56,13 +56,6 @@
             <artifactId>jedis</artifactId>
             <version>2.9.0</version>
         </dependency>
-
-
-
-
-
-
-        
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
@@ -82,5 +75,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
